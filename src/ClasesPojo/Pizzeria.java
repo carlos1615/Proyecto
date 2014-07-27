@@ -17,6 +17,26 @@ public class Pizzeria {
     private int rucPizzeria;
     private String Representante;
     
+    private String direcionPizzeria;
+
+    /**
+     * Get the value of direcionPizzeria
+     *
+     * @return the value of direcionPizzeria
+     */
+    public String getDirecionPizzeria() {
+        return direcionPizzeria;
+    }
+
+    /**
+     * Set the value of direcionPizzeria
+     *
+     * @param direcionPizzeria new value of direcionPizzeria
+     */
+    public void setDirecionPizzeria(String direcionPizzeria) {
+        this.direcionPizzeria = direcionPizzeria;
+    }
+
     private String estadoPizzeria;
 
     /**
