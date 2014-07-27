@@ -29,7 +29,7 @@ public class GestionPersona implements IGestion {
 
     public GestionPersona() {
         
-        persona=new Persona(0,"","","",0,"","","");
+        persona=new Persona(0,"","","",0,"","","","");
         Conexionbd.setPersona("DBA");
         Conexionbd.setClave("sql");
         Conexionbd.setCadenaConexion("jdbc:sqlanywhere:uid=DBA;pwd=sql;database=PizzeriaB");
@@ -65,6 +65,7 @@ public class GestionPersona implements IGestion {
         persona.setEmail(null);
         persona.setTelefono(null);
         persona.setCelular(null);
+        persona.setTipo(null);
         
     }
 
@@ -74,7 +75,7 @@ public class GestionPersona implements IGestion {
         try
         {
          Conexionbd.getInstancia().conectar();
-         Conexionbd.getInstancia().ejecutar("insert into Persona (codigo_per,nombre_per,apellido_per,cedula_per,edad_per,email_per,telefono_per,celular_per) values ("+persona.getCodigo()+",'"+persona.getNombre()+"','"+persona.getApellido()+"','"+persona.getCedula()+"','"+persona.getEdad()+"','"+persona.getEmail()+"','"+persona.getTelefono()+"','"+persona.getCelular()+"')");
+         Conexionbd.getInstancia().ejecutar("insert into Persona (codigo_per,nombre_per,apellido_per,cedula_per,edad_per,email_per,telefono_per,celular_per, tipo_per) values ("+persona.getCodigo()+",'"+persona.getNombre()+"','"+persona.getApellido()+"','"+persona.getCedula()+"','"+persona.getEdad()+"','"+persona.getEmail()+"','"+persona.getTelefono()+"','"+persona.getCelular()+"','"+persona.getTipo()+"')");
         }
         catch(SQLException ex)
         {
@@ -92,7 +93,7 @@ public class GestionPersona implements IGestion {
         try
         {
          Conexionbd.getInstancia().conectar();
-        ResultSet rs = Conexionbd.getInstancia().ejecutarbusqueda("SELECT codigo_per,nombre_per,apellido_per,cedula_per,edad_per,email_per,telefono_per,celular_per FROM Persona WHERE codigo_per = '"+persona.getCodigo()+"';");
+        ResultSet rs = Conexionbd.getInstancia().ejecutarbusqueda("SELECT codigo_per,nombre_per,apellido_per,cedula_per,edad_per,email_per,telefono_per,celular_per, tipo_per FROM Persona WHERE codigo_per = '"+persona.getCodigo()+"';");
            while(rs.next()){
                persona.setCodigo(rs.getInt(1));
                persona.setNombre(rs.getString(2));
@@ -102,6 +103,7 @@ public class GestionPersona implements IGestion {
                persona.setEmail(rs.getString(6));
                persona.setTelefono(rs.getString(7));
                persona.setCelular(rs.getString(8));
+               persona.setTipo(rs.getString(9));
         }
         }
         catch(SQLException ex)
@@ -167,7 +169,7 @@ public class GestionPersona implements IGestion {
         try
         {
             Conexionbd.getInstancia().conectar();
-            Conexionbd.getInstancia().ejecutar("UPDATE Persona SET nombre_per = '"+persona.getNombre()+"', apellido_per = '"+persona.getApellido()+"', cedula_per = '"+persona.getCedula()+"', edad_per = '"+persona.getEdad()+"', email_per = '"+persona.getEmail()+"', telefono_per = '"+persona.getTelefono()+"', celular_per = '"+persona.getCelular()+"' WHERE codigo_per = "+persona.getCodigo());
+            Conexionbd.getInstancia().ejecutar("UPDATE Persona SET nombre_per = '"+persona.getNombre()+"', apellido_per = '"+persona.getApellido()+"', cedula_per = '"+persona.getCedula()+"', edad_per = '"+persona.getEdad()+"', email_per = '"+persona.getEmail()+"', telefono_per = '"+persona.getTelefono()+"', celular_per = '"+persona.getCelular()+"', tipo_per = '"+persona.getTipo()+"' WHERE codigo_per = "+persona.getCodigo());
              
         }
        catch(SQLException ex)

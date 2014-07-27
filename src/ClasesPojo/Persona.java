@@ -12,7 +12,7 @@ package ClasesPojo;
  */
 public class Persona {
 
-    public Persona(int Codigo, String Nombre, String Apellido, String Cedula, int Edad, String Email, String Telefono, String Celular) {
+    public Persona(int Codigo, String Nombre, String Apellido, String Cedula, int Edad, String Email, String Telefono, String Celular, String Tipo) {
         this.Codigo = Codigo;
         this.Nombre = Nombre;
         this.Apellido = Apellido;
@@ -21,11 +21,16 @@ public class Persona {
         this.Email = Email;
         this.Telefono = Telefono;
         this.Celular = Celular;
+        this.Tipo = Tipo;
         
     }
     
     
         private int Codigo;
+
+    public Persona(int i, String string, String string0, String string1, int i0, String string2, String string3, String string4, String string5, String string6) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 
     /**
      * Get the value of Id
@@ -185,5 +190,24 @@ public class Persona {
         this.Celular = Celular;
     }
 
+    private String Tipo;
+
+    /**
+     * Get the value of Tipo
+     *
+     * @return the value of Tipo
+     */
+    public String getTipo() {
+        return Tipo;
+    }
+
+    /**
+     * Set the value of Tipo
+     *
+     * @param Tipo new value of Tipo
+     */
+    public void setTipo(String Tipo) {
+        this.Tipo = Tipo;
+    }
 
 }
