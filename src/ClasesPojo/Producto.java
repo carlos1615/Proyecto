@@ -11,6 +11,16 @@ package ClasesPojo;
  * @author User
  */
 public class Producto {
+
+    public Producto(int codigoProducto, String nombreProducto, String descripcionProducto, int codigoMarca, int codigoCategoria, int stockProducto) {
+        this.codigoProducto = codigoProducto;
+        this.nombreProducto = nombreProducto;
+        this.descripcionProducto = descripcionProducto;
+        this.codigoMarca = codigoMarca;
+        this.codigoCategoria = codigoCategoria;
+        this.stockProducto = stockProducto;
+    }
+    
     
     private int codigoProducto;
     private String nombreProducto;
@@ -18,6 +28,9 @@ public class Producto {
     private int codigoMarca;
     private int codigoCategoria;
     private int stockProducto;
+
+    
+    
 
     /**
      * Get the value of stockProducto

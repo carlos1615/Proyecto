@@ -16,6 +16,14 @@ public class Categoria {
     private String nombreCategoria;
     private String descripcionCategoria;
 
+    
+
+    public Categoria(int codigoCategoria, String nombreCategoria, String descripcionCategoria) {
+        this.codigoCategoria = codigoCategoria;
+        this.nombreCategoria = nombreCategoria;
+        this.descripcionCategoria = descripcionCategoria;
+    }
+
     /**
      * Get the value of descripcionCategoria
      *

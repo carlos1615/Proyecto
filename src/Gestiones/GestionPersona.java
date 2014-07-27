@@ -7,7 +7,7 @@
 package Gestiones;
 
 import CapaDatos.Conexionbd;
-import CapaInterfaz.Interfaz;
+import CapaInterfaz.InterfazPersonas;
 import ClasesPojo.Persona;
 import java.awt.Frame;
 import java.sql.ResultSet;
