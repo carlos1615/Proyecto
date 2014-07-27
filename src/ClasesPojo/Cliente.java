@@ -81,8 +81,6 @@ public class Cliente {
     public void setCodigoPersona(int CodigoPersona) {
         this.CodigoPersona = CodigoPersona;
     }
-
-
     /**
      * Get the value of codigoCliente
      *

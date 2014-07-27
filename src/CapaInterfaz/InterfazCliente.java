@@ -261,10 +261,7 @@ DefaultTableModel dta;
         cliente.getCliente().setCodigoPersona(Integer.parseInt(txtCod_Per.getText()));
         cliente.getCliente().setCodigoSucursal(Integer.parseInt(txtCod_Suc.getText()));
         cliente.getCliente().setEstadoCliente(txtEstado.getText());
-        
-        
-        
-        try {
+         try {
          cliente.Insertar();
          JOptionPane.showMessageDialog(this, "Dato insertado correctamente");
         }
