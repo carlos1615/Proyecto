@@ -30,8 +30,7 @@ public class GestionProducto implements IGestion {
         Conexionbd.setClave("sql");
         Conexionbd.setCadenaConexion("jdbc:sqlanywhere:uid=DBA;pwd=sql;database=PizzeriaB");
     }
-    
-    /**
+     /**
      * Get the value of usuario
      *
      * @return the value of usuario

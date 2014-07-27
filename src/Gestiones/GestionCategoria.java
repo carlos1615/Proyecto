@@ -40,8 +40,7 @@ public class GestionCategoria implements IGestion {
     public Categoria getCategoria() {
         return categoria;
     }
-
-    /**
+   /**
      * Set the value of usuario
      *
      * @param categoria new value of usuario

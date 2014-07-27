@@ -31,7 +31,6 @@ DefaultTableModel dta;
      */
     public InterfazCategoria() {
         initComponents();
-        
     }
 
     /**

@@ -283,7 +283,6 @@ DefaultTableModel dta;
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
     private void btnInserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInserActionPerformed
         producto.getProducto().setCodigoProducto(Integer.parseInt(txtId.getText()));
         producto.getProducto().setNombreProducto(txtNombre.getText());
