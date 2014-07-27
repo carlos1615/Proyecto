@@ -62,20 +62,8 @@ public class GestionProducto implements IGestion {
 
     @Override
     public void Insertar() throws SQLException {
-         try
-        {
-         Conexionbd.getInstancia().conectar();
-         Conexionbd.getInstancia().ejecutar("insert into Producto (codigo_pro,nombre_pro,descripcion_pro,codigo_mar,codigo_cat,stock_pro) values ("+producto.getCodigoProducto()+",'"+producto.getNombreProducto()+"','"+producto.getDescripcionProducto()+"','"+producto.getCodigoMarca()+"','"+producto.getCodigoCategoria()+"','"+producto.getStockProducto()+"')");
-        }
-        catch(SQLException ex)
-        {
-            throw ex;
-        }
-        finally 
-        {
-            Conexionbd.getInstancia().desconectar();
-        }
-    
+       
+        
     }
 
     @Override

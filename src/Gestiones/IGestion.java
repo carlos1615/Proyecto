@@ -7,6 +7,10 @@
 package Gestiones;
 
 import ClasesPojo.Persona;
+import ClasesPojo.Cliente;
+import ClasesPojo.Categoria;
+import ClasesPojo.Producto;
+import ClasesPojo.Empleado;
 import java.awt.List;
 import java.sql.SQLException;
 import javax.swing.JTable;

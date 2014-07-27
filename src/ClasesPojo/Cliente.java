@@ -17,6 +17,15 @@ public class Cliente {
     private int codigoSucursal;
     private String estadoCliente;
 
+    public Cliente(int codigoCliente, int CodigoPersona, int codigoSucursal, String estadoCliente) {
+        this.codigoCliente = codigoCliente;
+        this.CodigoPersona = CodigoPersona;
+        this.codigoSucursal = codigoSucursal;
+        this.estadoCliente = estadoCliente;
+    }
+
+    
+
     /**
      * Get the value of estadoCliente
      *

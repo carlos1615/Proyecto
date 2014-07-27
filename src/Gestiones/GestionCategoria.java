@@ -27,7 +27,7 @@ public class GestionCategoria implements IGestion {
      public GestionCategoria() {
         
         categoria=new Categoria(0,"","");
-        Conexionbd.setPersona("DBA");
+       Conexionbd.setPersona("DBA");
         Conexionbd.setClave("sql");
         Conexionbd.setCadenaConexion("jdbc:sqlanywhere:uid=DBA;pwd=sql;database=PizzeriaB");
     }

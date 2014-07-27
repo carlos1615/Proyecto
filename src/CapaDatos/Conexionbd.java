@@ -20,6 +20,18 @@ import java.util.logging.Logger;
  * @author PROFESORES
  */
 public class Conexionbd {
+
+    public static void setCliente(String dba) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public static void setCategoria(String dba) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public static void setProducto(String dba) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     private Connection conectar = null;
     private PreparedStatement sentencia=null;
