@@ -16,9 +16,8 @@ public class Pizzeria {
     private String Nombre;
     private int rucPizzeria;
     private String Representante;
-    
     private String direcionPizzeria;
-
+    private String estadoPizzeria;
     /**
      * Get the value of direcionPizzeria
      *
@@ -37,7 +36,7 @@ public class Pizzeria {
         this.direcionPizzeria = direcionPizzeria;
     }
 
-    private String estadoPizzeria;
+    
 
     /**
      * Get the value of estadoPizzeria
