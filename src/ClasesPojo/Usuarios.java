@@ -17,6 +17,26 @@ public class Usuarios {
     
     private String nombreUsuario;
     private String pwdUsuario;
+    private String permisoUsuario;
+
+    public String getPermisoUsuario() {
+        return permisoUsuario;
+    }
+
+    public void setPermisoUsuario(String permisoUsuario) {
+        this.permisoUsuario = permisoUsuario;
+    }
+
+    public Usuarios(int codigoUsuario, int codigoEmpleado, String nombreUsuario, String pwdUsuario) {
+        this.codigoUsuario = codigoUsuario;
+        this.codigoEmpleado = codigoEmpleado;
+        this.nombreUsuario = nombreUsuario;
+        this.pwdUsuario = pwdUsuario;
+    }
+
+    public Usuarios(int i, int i0, String string, String string0, String string1, String string2) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 
     /**
      * Get the value of pwdUsuario
