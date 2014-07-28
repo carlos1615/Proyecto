@@ -14,6 +14,7 @@ import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -22,7 +23,7 @@ import javax.swing.table.DefaultTableModel;
  */
 public class GestionPersona implements IGestion {
      private Object[][] dtPersona;
-     DefaultTableModel dta;
+     DefaultTableModel tablaPersona;
     String consulta;
     
         private Persona persona;
@@ -117,50 +118,7 @@ public class GestionPersona implements IGestion {
     }
     @Override
     public void ConsultaTotal()throws SQLException{
-//        
-//    Conexionbd.getInstancia().conectar();
-////        ResultSet rs = Conexionbd.getInstancia().ejecutarbusqueda("SELECT Id,Nombre,Apellido,Cedula FROM usuario ");
-////        while(rs.next()){
-////            usuario.setId(rs.getInt(1));
-////               usuario.setNombre(rs.getString(2));
-////               usuario.setApellido(rs.getString(3));
-////               usuario.setCedula(rs.getString(4));
-//////            ResultSetMetaData res=rs.getMetaData();
-//////        int NumeroColumnas=res.getColumnCount();
-//////        DefaultTableModel modelo=new DefaultTableModel();
-////        }
-//        ResultSet sen = Conexionbd.getInstancia().ejecutarbusqueda("SELECT * FROM usuario");
-//        ResultSetMetaData res=sen.getMetaData();
-////        int NumeroColumnas=res.getColumnCount();
-////        DefaultTableModel modelo=new DefaultTableModel();
-////        Tabla_datos.setModel(modelo);
-////            for (int i = 1; i <= NumeroColumnas; i++) {
-////                modelo.addColumn(res.getColumnLabel(i));
-////            }
-////            while (sen.next()){
-////                Object [] fila = new Object[NumeroColumnas];
-////                for (int j = 0; j < NumeroColumnas; j++) {
-////                    
-////                    fila[j]=sen.getObject(j+1);
-////                }
-////                modelo.addRow(fila);
-////                
-////            }
-//        ArrayList<Object[]> data=new ArrayList<>();
-//         while (sen.next()){
-//                Object [] fila = new Object[res.getColumnCount()];
-//                 for (int j = 0; j < fila.length; j++) {
-////                    
-//                    fila[j]=sen.getObject(j+1);}
-//                 data.add(fila);
-//                 dta=(DefaultTableModel)this.Tabla_datos.getModel();
-//            for (int i = 0; i < data.size(); i++) {
-//                dta.addRow(data.get(i));
-//            }
-//                 
-//                 
-//         }
-//        
+
 }
     
      
@@ -201,7 +159,34 @@ public class GestionPersona implements IGestion {
     }
     
      @Override
-     public DefaultTableModel cargarTablaEmpleados()throws SQLException{return null;
+     public DefaultTableModel cargarTablaEmpleados()throws SQLException{;
+     {
+        String[] columnas = {"Codigo","Nombre", "Apellido", "Cedula","Email","Telefono","Celular","Tipo" };
+        String[] registro = new String[9];
+        this.tablaPersona=new DefaultTableModel((Object[][])null,columnas);
+       
+        try
+        {
+             Conexionbd.getInstancia().conectar();
+        ResultSet rs = Conexionbd.getInstancia().ejecutarbusqueda("SELECT codigo_per,nombre_per,apellido_per,cedula_per,edad_per,email_per,telefono_per,celular_per, tipo_per FROM Persona ");
+               while (rs.next()) {
+                registro[0]=rs.getString(1);
+                registro[1]=rs.getString(2);
+                registro[2]=rs.getString(3);
+                registro[3]=rs.getString(4);
+                registro[4]=rs.getString(5);
+                registro[5]=rs.getString(6);
+                registro[6]=rs.getString(7);
+                registro[7]=rs.getString(8);
+                this.tablaPersona.addRow(registro);                
+            }
+        }
+        catch(SQLException ex)
+        {
+            JOptionPane.showMessageDialog(null, ex);
+        }        
+        return tablaPersona;
+    }
 }
 }
     
