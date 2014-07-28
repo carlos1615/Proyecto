@@ -200,7 +200,9 @@ public class GestionPersona implements IGestion {
         }
     }
     
-    
+     @Override
+     public DefaultTableModel cargarTablaEmpleados()throws SQLException{return null;
+}
 }
     
 
