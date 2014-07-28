@@ -6,14 +6,11 @@
 
 package Gestiones;
 
-import ClasesPojo.Persona;
-import ClasesPojo.Cliente;
-import ClasesPojo.Categoria;
-import ClasesPojo.Producto;
-import ClasesPojo.Empleado;
-import java.awt.List;
+
 import java.sql.SQLException;
-import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
+
+
 
 
 /**
@@ -28,6 +25,8 @@ public interface IGestion {
     public void Modificar()throws SQLException;
     public void Eliminar()throws SQLException;
     public void ConsultaTotal()throws SQLException;
+    public DefaultTableModel cargarTablaEmpleados();
+    
     
     
 }
