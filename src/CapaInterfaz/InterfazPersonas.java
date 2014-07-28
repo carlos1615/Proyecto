@@ -22,7 +22,7 @@ import javax.swing.table.DefaultTableModel;
  * @author PROFESORES
  */
 public class InterfazPersonas extends javax.swing.JFrame {
-DefaultTableModel dta;
+
     GestionPersona persona = new GestionPersona ();
     
    
@@ -176,12 +176,6 @@ DefaultTableModel dta;
 
         jLabel9.setText("Tipo");
 
-        txtTipo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtTipoActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -227,7 +221,7 @@ DefaultTableModel dta;
                                 .addComponent(txtCel, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(53, 53, 53))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(31, 31, 31)
+                        .addGap(26, 26, 26)
                         .addComponent(txtTipo, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -238,8 +232,9 @@ DefaultTableModel dta;
                     .addComponent(btnElimiinar, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(112, 112, 112))
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(4, 4, 4)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jbtconsulta)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
@@ -300,12 +295,12 @@ DefaultTableModel dta;
                         .addComponent(btnElimiinar)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(69, 69, 69)
-                        .addComponent(jbtconsulta)))
-                .addContainerGap(80, Short.MAX_VALUE))
+                        .addComponent(jbtconsulta))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(39, 39, 39)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(70, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -318,9 +313,7 @@ DefaultTableModel dta;
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -381,11 +374,10 @@ DefaultTableModel dta;
         this.txtNombre.setText(Tabla_datos.getModel().getValueAt(row, 1).toString());
         this.txtApe.setText(Tabla_datos.getModel().getValueAt(row, 2).toString());
         this.txtCed.setText(Tabla_datos.getModel().getValueAt(row, 3).toString());
-        this.txtEdad.setText(Tabla_datos.getModel().getValueAt(row, 4).toString());
-        this.txtEmail.setText(Tabla_datos.getModel().getValueAt(row, 5).toString());
-        this.txtTel.setText(Tabla_datos.getModel().getValueAt(row, 6).toString());
-        this.txtCel.setText(Tabla_datos.getModel().getValueAt(row, 7).toString());
-        this.txtTipo.setText(Tabla_datos.getModel().getValueAt(row, 8).toString());        
+        this.txtEmail.setText(Tabla_datos.getModel().getValueAt(row, 4).toString());
+        this.txtTel.setText(Tabla_datos.getModel().getValueAt(row, 5).toString());
+        this.txtCel.setText(Tabla_datos.getModel().getValueAt(row, 6).toString());
+        this.txtTipo.setText(Tabla_datos.getModel().getValueAt(row, 7).toString());
 
 //        this.txtApe.setText(Tabla_datos.getModel().getValueAt(row, 2).toString());
 //        this.txtCed.setText(Tabla_datos.getModel().getValueAt(row, 3).toString());
@@ -473,10 +465,6 @@ DefaultTableModel dta;
         // TODO add your handling code here:
        
     }//GEN-LAST:event_txtIdKeyTyped
-
-    private void txtTipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTipoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtTipoActionPerformed
 
     /**     * @param args the command line arguments
 
