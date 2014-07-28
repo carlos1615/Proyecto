@@ -136,5 +136,7 @@ public class GestionCategoria implements IGestion {
     public void ConsultaTotal() throws SQLException {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+    @Override
+     public DefaultTableModel cargarTablaEmpleados()throws SQLException{return null;
+}
 }

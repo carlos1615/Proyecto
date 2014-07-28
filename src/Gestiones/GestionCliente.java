@@ -12,7 +12,9 @@ import java.awt.Frame;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 /**
  *
@@ -20,13 +22,14 @@ import javax.swing.table.DefaultTableModel;
  */
 public class GestionCliente implements IGestion {
      private Cliente cliente;
+    private DefaultTableModel tablaPersona;
     
      public GestionCliente() {
         
         cliente=new Cliente(0,0,0,"");
         Conexionbd.setPersona("DBA");
         Conexionbd.setClave("sql");
-        Conexionbd.setCadenaConexion("jdbc:sqlanywhere:uid=DBA;pwd=sql;database=PizzeriaB");
+        Conexionbd.setCadenaConexion("jdbc:sqlanywhere:uid=DBA;pwd=sql;database=PizzeriaDB");
     }
 
  /**
@@ -135,7 +138,35 @@ public class GestionCliente implements IGestion {
     }
 
     @Override
-    public void ConsultaTotal() throws SQLException {
+    public DefaultTableModel cargarTablaEmpleados()
+    {
+        String[] columnas = {"#", "NOMBRE", "APELLIDO","CEDULA","EDAD","EMAIL","TELEFONO","CELULAR","TIPO" };
+        String[] registro = new String[5];
+        this.tablaPersona=new DefaultTableModel((Object[][])null,columnas);
+        
+        try
+        {
+             Conexionbd.getInstancia().conectar();
+            
+            ResultSet rs = Conexionbd.getInstancia().ejecutarbusquedatotal("select * from persona");
+            while (rs.next()) {
+                registro[0]=rs.getString(1);
+                registro[1]=rs.getString(2);
+                registro[2]=rs.getString(3);
+                registro[3]=rs.getString(4);
+                registro[4]=rs.getString(5);
+                this.tablaPersona.addRow(registro);                
+            }
+        }
+        catch(SQLException ex)
+        {
+            JOptionPane.showMessageDialog(null, ex);
+        }        
+        return tablaPersona;
+    }
+    
+     @Override
+  public void ConsultaTotal() throws SQLException {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
