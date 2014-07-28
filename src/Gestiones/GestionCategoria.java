@@ -12,6 +12,7 @@ import CapaDatos.Conexionbd;
 import java.sql.ResultSet;
 
 import java.sql.SQLException;
+import javax.swing.JOptionPane;
 
 import javax.swing.table.DefaultTableModel;
 
@@ -22,6 +23,7 @@ import javax.swing.table.DefaultTableModel;
  */
 public class GestionCategoria implements IGestion {
     private Categoria categoria;
+    DefaultTableModel tablaCategoria;
     
      public GestionCategoria() {
         
@@ -135,7 +137,35 @@ public class GestionCategoria implements IGestion {
     public void ConsultaTotal() throws SQLException {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+   
     @Override
-     public DefaultTableModel cargarTablaEmpleados()throws SQLException{return null;
+     public DefaultTableModel cargarTabla()throws SQLException{;
+     {
+        String[] columnas = {"Codigo","Nombre", "Descripcion"};
+        String[] registro = new String[3];
+        this.tablaCategoria=new DefaultTableModel((Object[][])null,columnas);
+       
+        try
+        {
+             Conexionbd.getInstancia().conectar();
+        ResultSet rs = Conexionbd.getInstancia().ejecutarbusqueda("SELECT codigo_cat,nombre_cat,descripcion_cat FROM Persona ");
+               while (rs.next()) {
+                registro[0]=rs.getString(1);
+                registro[1]=rs.getString(2);
+                registro[2]=rs.getString(3);
+                this.tablaCategoria.addRow(registro);                
+            }
+        }
+        catch(SQLException ex)
+        {
+            JOptionPane.showMessageDialog(null, ex);
+        }        
+        return tablaCategoria;
+    }
 }
+
+    
+
+    
 }
+

@@ -159,7 +159,7 @@ public class GestionPersona implements IGestion {
     }
     
      @Override
-     public DefaultTableModel cargarTablaEmpleados()throws SQLException{;
+     public DefaultTableModel cargarTabla()throws SQLException{;
      {
         String[] columnas = {"Codigo","Nombre", "Apellido", "Cedula","Email","Telefono","Celular","Tipo" };
         String[] registro = new String[9];

@@ -405,58 +405,12 @@ DefaultTableModel dta;
     }//GEN-LAST:event_btnNuevoActionPerformed
 
     private void jbtconsultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtconsultaActionPerformed
-        // TODO add your handling code here:
-//         try
-//        {
-//            usuario.ConsultaTotal();
-//            dta=(DefaultTableModel)this.Tabla_datos.getModel();
-//            for (int i = 0; i < data.size(); i++) {
-//                dta.addRow(data.get[i]);
-//                
-//            }
-////                modelo.addColumn(res.getColumnLabel(i));
-////            }
-//            
-//            JOptionPane.showMessageDialog(this, "El dato se eliminó correctamente");
-//            
-//            }
-//        catch(SQLException ex)
-//        {
-//            JOptionPane.showMessageDialog(this, ex.getMessage());
-//        }
-//        try
-//        {
-//         Conexionbd.getInstancia().conectar();
-//        ResultSet sen = Conexionbd.getInstancia().ejecutarbusqueda("SELECT * FROM usuario");
-//        ResultSetMetaData res=sen.getMetaData();
-//        int NumeroColumnas=res.getColumnCount();
-//        DefaultTableModel modelo=new DefaultTableModel();
-//        this.Tabla_datos.setModel(modelo);
-//            for (int i = 1; i <= NumeroColumnas; i++) {
-//                modelo.addColumn(res.getColumnLabel(i));
-//            }
-//            while (sen.next()){
-//                Object [] fila = new Object[NumeroColumnas];
-//                for (int j = 0; j < NumeroColumnas; j++) {
-//                    
-//                    fila[j]=sen.getObject(j+1);
-//                }
-//                modelo.addRow(fila);
-//                
-//            }
-//        
-//                   
-//        }
-//        
-//             catch (SQLException ex1) {
-//                Logger.getLogger(Interfaz.class.getName()).log(Level.SEVERE, null, ex1);
-//            }
-//        
-//        finally 
-//        {
-//            Conexionbd.getInstancia().desconectar();
-//        }
-    
+
+    try {
+        this.Tabla_datos.setModel(producto.cargarTabla());
+    } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(this, ex.getMessage());
+        }
     }//GEN-LAST:event_jbtconsultaActionPerformed
 
     private void txtIdKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtIdKeyPressed

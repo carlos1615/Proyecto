@@ -449,10 +449,10 @@ public class InterfazPersonas extends javax.swing.JFrame {
     private void jbtconsultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtconsultaActionPerformed
 
     try {
-        this.Tabla_datos.setModel(persona.cargarTablaEmpleados());
+        this.Tabla_datos.setModel(persona.cargarTabla());
     } catch (SQLException ex) {
-        Logger.getLogger(InterfazPersonas.class.getName()).log(Level.SEVERE, null, ex);
-    }
+            JOptionPane.showMessageDialog(this, ex.getMessage());
+        }
     
     }//GEN-LAST:event_jbtconsultaActionPerformed
 

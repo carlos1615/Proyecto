@@ -52,7 +52,7 @@ DefaultTableModel dta;
         txtCod_Per = new javax.swing.JTextField();
         txtCod_Suc = new javax.swing.JTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
-        Tabla_Personas = new javax.swing.JTable();
+        Tabla_Datos = new javax.swing.JTable();
         btnConsul = new javax.swing.JButton();
         btnModi = new javax.swing.JButton();
         btnElimiinar = new javax.swing.JButton();
@@ -61,8 +61,6 @@ DefaultTableModel dta;
         jbtconsulta = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         txtEstado = new javax.swing.JTextField();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        Tabla_Sucursal = new javax.swing.JTable();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -95,7 +93,7 @@ DefaultTableModel dta;
             }
         });
 
-        Tabla_Personas.setModel(new javax.swing.table.DefaultTableModel(
+        Tabla_Datos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {},
                 {},
@@ -106,12 +104,12 @@ DefaultTableModel dta;
 
             }
         ));
-        Tabla_Personas.addMouseListener(new java.awt.event.MouseAdapter() {
+        Tabla_Datos.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Tabla_PersonasMouseClicked(evt);
+                Tabla_DatosMouseClicked(evt);
             }
         });
-        jScrollPane2.setViewportView(Tabla_Personas);
+        jScrollPane2.setViewportView(Tabla_Datos);
 
         btnConsul.setText("Consultar por Id");
         btnConsul.addActionListener(new java.awt.event.ActionListener() {
@@ -157,24 +155,6 @@ DefaultTableModel dta;
 
         jLabel4.setText("Estado");
 
-        Tabla_Sucursal.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {},
-                {},
-                {},
-                {}
-            },
-            new String [] {
-
-            }
-        ));
-        Tabla_Sucursal.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                Tabla_SucursalMouseClicked(evt);
-            }
-        });
-        jScrollPane3.setViewportView(Tabla_Sucursal);
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -212,11 +192,10 @@ DefaultTableModel dta;
                 .addGap(229, 229, 229))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jScrollPane2)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 456, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(462, 462, 462)
                         .addComponent(jbtconsulta)))
                 .addGap(0, 30, Short.MAX_VALUE))
         );
@@ -253,11 +232,9 @@ DefaultTableModel dta;
                         .addGap(8, 8, 8)
                         .addComponent(btnElimiinar)))
                 .addGap(69, 69, 69)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jbtconsulta)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jbtconsulta)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(61, Short.MAX_VALUE))
         );
 
@@ -318,18 +295,20 @@ DefaultTableModel dta;
        
     }//GEN-LAST:event_btnConsulActionPerformed
 
-    private void Tabla_PersonasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tabla_PersonasMouseClicked
+    private void Tabla_DatosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tabla_DatosMouseClicked
         // TODO add your handling code here:
-        int row = Tabla_Personas.getSelectedRow();
-        
-        this.txtCod_Per.setText(Tabla_Personas.getModel().getValueAt(row, 0).toString());
+        int row = Tabla_Datos.getSelectedRow();
+        this.txtId.setText(Tabla_Datos.getModel().getValueAt(row, 0).toString());
+        this.txtCod_Per.setText(Tabla_Datos.getModel().getValueAt(row, 1).toString());
+        this.txtCod_Suc.setText(Tabla_Datos.getModel().getValueAt(row, 2).toString());
+        this.txtEstado.setText(Tabla_Datos.getModel().getValueAt(row, 3).toString());
        
               
         
 
 //        this.txtDesc.setText(Tabla_datos.getModel().getValueAt(row, 2).toString());
 //        this.txtCod_Mar.setText(Tabla_datos.getModel().getValueAt(row, 3).toString());
-    }//GEN-LAST:event_Tabla_PersonasMouseClicked
+    }//GEN-LAST:event_Tabla_DatosMouseClicked
 
     private void btnModiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModiActionPerformed
         // TODO add your handling code here:
@@ -386,10 +365,14 @@ DefaultTableModel dta;
     }//GEN-LAST:event_btnNuevoActionPerformed
 
     private void jbtconsultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtconsultaActionPerformed
+    try {
         // TODO add your handling code here:
-  tablaPersonas();
-  tablaSucursal();
-
+  
+        this.Tabla_Datos.setModel(cliente.cargarTabla());
+    } catch (SQLException ex) {
+        Logger.getLogger(InterfazCliente.class.getName()).log(Level.SEVERE, null, ex);
+    }
+        
     }//GEN-LAST:event_jbtconsultaActionPerformed
 
     private void txtIdKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtIdKeyPressed
@@ -401,80 +384,10 @@ DefaultTableModel dta;
         // TODO add your handling code here:
        
     }//GEN-LAST:event_txtIdKeyTyped
-
-    private void Tabla_SucursalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tabla_SucursalMouseClicked
-        // TODO add your handling code here:
-        int row = Tabla_Sucursal.getSelectedRow();
-        
-        this.txtCod_Suc.setText(Tabla_Sucursal.getModel().getValueAt(row, 0).toString());
-    }//GEN-LAST:event_Tabla_SucursalMouseClicked
     
-    public void tablaPersonas(){
-     try
-        {
-         Conexionbd.getInstancia().conectar();
-        ResultSet sen = Conexionbd.getInstancia().ejecutarbusqueda("SELECT * FROM Persona");
-        ResultSetMetaData res=sen.getMetaData();
-        int NumeroColumnas=res.getColumnCount();
-        DefaultTableModel modelo=new DefaultTableModel();
-        this.Tabla_Personas.setModel(modelo);
-            for (int i = 1; i <= NumeroColumnas; i++) {
-                modelo.addColumn(res.getColumnLabel(i));
-            }
-            while (sen.next()){
-                Object [] fila = new Object[NumeroColumnas];
-                for (int j = 0; j < NumeroColumnas; j++) {
-                    
-                    fila[j]=sen.getObject(j+1);
-                }
-                modelo.addRow(fila);
-              
-            }
-                          
-        }
-        
-             catch (SQLException ex1) {
-                Logger.getLogger(InterfazCliente.class.getName()).log(Level.SEVERE, null, ex1);
-            }
-        
-        finally 
-        {
-            Conexionbd.getInstancia().desconectar();
-        }
-}
-    public void tablaSucursal(){
-     try
-        {
-         Conexionbd.getInstancia().conectar();
-        ResultSet sen = Conexionbd.getInstancia().ejecutarbusqueda("SELECT * FROM Sucursal");
-        ResultSetMetaData res=sen.getMetaData();
-        int NumeroColumnas=res.getColumnCount();
-        DefaultTableModel modelo=new DefaultTableModel();
-        this.Tabla_Sucursal.setModel(modelo);
-            for (int i = 1; i <= NumeroColumnas; i++) {
-                modelo.addColumn(res.getColumnLabel(i));
-            }
-            while (sen.next()){
-                Object [] fila = new Object[NumeroColumnas];
-                for (int j = 0; j < NumeroColumnas; j++) {
-                    
-                    fila[j]=sen.getObject(j+1);
-                }
-                modelo.addRow(fila);
-              
-            }
-                          
-        }
-        
-             catch (SQLException ex1) {
-                Logger.getLogger(InterfazCliente.class.getName()).log(Level.SEVERE, null, ex1);
-            }
-        
-        finally 
-        {
-            Conexionbd.getInstancia().desconectar();
-        }
-}
+   
+    
+
     /**     * @param args the command line arguments
 
      */
@@ -511,8 +424,7 @@ DefaultTableModel dta;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTable Tabla_Personas;
-    private javax.swing.JTable Tabla_Sucursal;
+    private javax.swing.JTable Tabla_Datos;
     private javax.swing.JButton btnConsul;
     private javax.swing.JButton btnElimiinar;
     private javax.swing.JButton btnInser;
@@ -525,7 +437,6 @@ DefaultTableModel dta;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTable jTable1;
     private javax.swing.JButton jbtconsulta;
     private javax.swing.JTextField txtCod_Per;

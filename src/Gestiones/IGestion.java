@@ -25,7 +25,7 @@ public interface IGestion {
     public void Modificar()throws SQLException;
     public void Eliminar()throws SQLException;
     public void ConsultaTotal()throws SQLException;
-    public DefaultTableModel cargarTablaEmpleados()throws SQLException;
+    public DefaultTableModel cargarTabla()throws SQLException;
     
     
     

@@ -15,6 +15,7 @@ import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 /**
  *
@@ -22,9 +23,9 @@ import javax.swing.table.DefaultTableModel;
  */
 public class GestionProducto implements IGestion {
     private Producto producto;
-    
+    private DefaultTableModel tablaProducto;
     public GestionProducto() {
-        
+         
         producto=new Producto(0,"","",0,0,0);
         Conexionbd.setPersona("DBA");
         Conexionbd.setClave("sql");
@@ -134,8 +135,35 @@ public class GestionProducto implements IGestion {
     public void ConsultaTotal() throws SQLException {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
-     @Override
-     public DefaultTableModel cargarTablaEmpleados()throws SQLException{return null;
+
+    @Override
+     public DefaultTableModel cargarTabla()throws SQLException{;
+     {
+        String[] columnas = {"Codigo","Nombre", "Descripcion", "CodMarca","CodCat","Stock"};
+        String[] registro = new String[9];
+        this.tablaProducto=new DefaultTableModel((Object[][])null,columnas);
+       
+        try
+        {
+             Conexionbd.getInstancia().conectar();
+        ResultSet rs = Conexionbd.getInstancia().ejecutarbusqueda("SELECT codigo_pro,nombre_pro,descripcion_pro,codigo_mar,codigo_cat,stock_pro FROM Producto ");
+               while (rs.next()) {
+                registro[0]=rs.getString(1);
+                registro[1]=rs.getString(2);
+                registro[2]=rs.getString(3);
+                registro[3]=rs.getString(4);
+                registro[4]=rs.getString(5);
+                registro[5]=rs.getString(6);
+                this.tablaProducto.addRow(registro);                
+            }
+        }
+        catch(SQLException ex)
+        {
+            JOptionPane.showMessageDialog(null, ex);
+        }        
+        return tablaProducto;
+    }
 }
+    
+     
 }
