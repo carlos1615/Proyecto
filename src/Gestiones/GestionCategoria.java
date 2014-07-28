@@ -8,12 +8,11 @@ package Gestiones;
 
 import ClasesPojo.Categoria;
 import CapaDatos.Conexionbd;
-import java.sql.SQLException;
-import java.awt.Frame;
+
 import java.sql.ResultSet;
-import java.sql.ResultSetMetaData;
+
 import java.sql.SQLException;
-import java.util.ArrayList;
+
 import javax.swing.table.DefaultTableModel;
 
 /**
