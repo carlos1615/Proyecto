@@ -4,13 +4,11 @@
  * and open the template in the editor.
  */
 
-package usuarioconexion;
-
 /**
  *
- * @author PROFESORES
+ * @author User
  */
-public class PersonaConexion {
+public class main {
 
     /**
      * @param args the command line arguments

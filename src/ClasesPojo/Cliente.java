@@ -13,38 +13,28 @@ package ClasesPojo;
 public class Cliente {
     
     private int codigoCliente;
-    private int CodigoPersona;
     private int codigoSucursal;
-    private String estadoCliente;
+    private String nombreCliente;
+     private String ApellidoCliente;
+     private String cedulaCliente; 
+     private String emailCliente;
+    private String telefonoCliente;
+    private String celularCliente;
+     private String direccionCliente;
 
-    public Cliente(int codigoCliente, int CodigoPersona, int codigoSucursal, String estadoCliente) {
+    public Cliente(int codigoCliente, int codigoSucursal, String nombreCliente, String ApellidoCliente, String cedulaCliente, String emailCliente, String telefonoCliente, String celularCliente, String direccionCliente) {
         this.codigoCliente = codigoCliente;
-        this.CodigoPersona = CodigoPersona;
         this.codigoSucursal = codigoSucursal;
-        this.estadoCliente = estadoCliente;
+        this.nombreCliente = nombreCliente;
+        this.ApellidoCliente = ApellidoCliente;
+        this.cedulaCliente = cedulaCliente;
+        this.emailCliente = emailCliente;
+        this.telefonoCliente = telefonoCliente;
+        this.celularCliente = celularCliente;
+        this.direccionCliente = direccionCliente;
     }
-
-    
-
-    /**
-     * Get the value of estadoCliente
-     *
-     * @return the value of estadoCliente
-     */
-    public String getEstadoCliente() {
-        return estadoCliente;
-    }
-
-    /**
-     * Set the value of estadoCliente
-     *
-     * @param estadoCliente new value of estadoCliente
-     */
-    public void setEstadoCliente(String estadoCliente) {
-        this.estadoCliente = estadoCliente;
-    }
-
-
+     
+ 
     /**
      * Get the value of codigoSucursal
      *
@@ -63,40 +53,69 @@ public class Cliente {
         this.codigoSucursal = codigoSucursal;
     }
 
-
-    /**
-     * Get the value of CodigoPersona
-     *
-     * @return the value of CodigoPersona
-     */
-    public int getCodigoPersona() {
-        return CodigoPersona;
-    }
-
-    /**
-     * Set the value of CodigoPersona
-     *
-     * @param CodigoPersona new value of CodigoPersona
-     */
-    public void setCodigoPersona(int CodigoPersona) {
-        this.CodigoPersona = CodigoPersona;
-    }
-    /**
-     * Get the value of codigoCliente
-     *
-     * @return the value of codigoCliente
-     */
     public int getCodigoCliente() {
         return codigoCliente;
     }
 
-    /**
-     * Set the value of codigoCliente
-     *
-     * @param codigoCliente new value of codigoCliente
-     */
     public void setCodigoCliente(int codigoCliente) {
         this.codigoCliente = codigoCliente;
     }
 
+    public String getNombreCliente() {
+        return nombreCliente;
+    }
+
+    public void setNombreCliente(String nombreCliente) {
+        this.nombreCliente = nombreCliente;
+    }
+
+    public String getApellidoCliente() {
+        return ApellidoCliente;
+    }
+
+    public void setApellidoCliente(String ApellidoCliente) {
+        this.ApellidoCliente = ApellidoCliente;
+    }
+
+    public String getCedulaCliente() {
+        return cedulaCliente;
+    }
+
+    public void setCedulaCliente(String cedulaCliente) {
+        this.cedulaCliente = cedulaCliente;
+    }
+
+    public String getEmailCliente() {
+        return emailCliente;
+    }
+
+    public void setEmailCliente(String emailCliente) {
+        this.emailCliente = emailCliente;
+    }
+
+    public String getTelefonoCliente() {
+        return telefonoCliente;
+    }
+
+    public void setTelefonoCliente(String telefonoCliente) {
+        this.telefonoCliente = telefonoCliente;
+    }
+
+    public String getCelularCliente() {
+        return celularCliente;
+    }
+
+    public void setCelularCliente(String celularCliente) {
+        this.celularCliente = celularCliente;
+    }
+
+    public String getDireccionCliente() {
+        return direccionCliente;
+    }
+
+    public void setDireccionCliente(String direccionCliente) {
+        this.direccionCliente = direccionCliente;
+    }
+
+   
 }

@@ -7,14 +7,13 @@
 package Gestiones;
 
 import CapaDatos.Conexionbd;
-import CapaInterfaz.InterfazProducto;
-import ClasesPojo.Persona;
+
 import ClasesPojo.Producto;
-import java.awt.Frame;
+
 import java.sql.ResultSet;
-import java.sql.ResultSetMetaData;
+
 import java.sql.SQLException;
-import java.util.ArrayList;
+
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 /**
